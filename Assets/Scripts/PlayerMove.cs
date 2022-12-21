@@ -9,10 +9,15 @@ public class PlayerMove : MonoBehaviour
 
     Rigidbody2D rb2D;
 
+    public SpriteRenderer spriteRenderer;
+
+    Animator animator;
     
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     
@@ -21,15 +26,20 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey("d"))
         {
             rb2D.velocity = new Vector2(runSpeed, rb2D.velocity.y);
+            spriteRenderer.flipX = false;
+            animator.SetBool("Run", true);
         }
         
         else if (Input.GetKey("a"))
         {
             rb2D.velocity = new Vector2(-runSpeed, rb2D.velocity.y);
+            spriteRenderer.flipX = true;
+            animator.SetBool("Run", true);
         }
         else
         {
             rb2D.velocity = new Vector2(0, rb2D.velocity.y);
+            animator.SetBool("Run", false);
         }
         if (Input.GetKey("w") && CheckGround.isGrounded)
         {

@@ -1024,7 +1024,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 305377647}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d1f3c86125993a34585d9a98334ef670, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1412,7 +1412,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1811927662
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1453,3 +1453,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 2
   jumpSpeed: 3
+  spriteRenderer: {fileID: 0}
