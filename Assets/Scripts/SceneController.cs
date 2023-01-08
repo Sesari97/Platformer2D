@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class SceneController : MonoBehaviour
         if (fruitsRemaining == 0)
         {
             Debug.Log("Has recogido todas las frutas");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
     }
