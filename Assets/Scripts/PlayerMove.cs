@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerMove : MonoBehaviour
 {
+    public AudioSource soundJump;
+
     public float runSpeed = 2;
     public float jumpSpeed = 3;
 
@@ -44,6 +47,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey("w") && CheckGround.isGrounded)
         {
             rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
+            soundJump.Play();
         }
     }
 }

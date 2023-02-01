@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class UI_Controller : MonoBehaviour
 {
     public GameObject panelOptions;
     public GameObject canvasGameStart;
+    public AudioSource sound;
 
     void Start()
     {
@@ -17,17 +19,20 @@ public class UI_Controller : MonoBehaviour
     {
         canvasGameStart.SetActive(false);
         Time.timeScale = 1;
+        sound.Play();
     }
     public void showOptionpanel()
     {
         Time.timeScale = 0;
         panelOptions.SetActive(true);
+        sound.Play();
     }
 
     public void hideOptionsPanel()
     {
         Time.timeScale = 1;
         panelOptions.SetActive(false);
+        sound.Play();
     }
 
     public void gotoStartScreen()
@@ -38,5 +43,6 @@ public class UI_Controller : MonoBehaviour
     public void quitGame()
     {
         Application.Quit();
+        sound.Play();
     }
 }
